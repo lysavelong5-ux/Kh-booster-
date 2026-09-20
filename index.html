@@ -88,7 +88,6 @@
             transform: scale(0.95);
         }
 
-        /* លាក់ Main App ពេលកំពុងរាប់ថយក្រោយ */
         #main-app {
             display: none;
             width: 100%;
@@ -254,6 +253,82 @@
             color: #000000;
         }
 
+        /* ---------------- Pricing Modal (Popup) ---------------- */
+        #pricing-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .modal-content {
+            background: #222222;
+            border: 2px solid #00ffd5;
+            border-radius: 25px;
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 0 20px rgba(0, 255, 213, 0.3);
+            box-sizing: border-box;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #444;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            color: #ffcc00;
+            font-size: 16px;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .price-item {
+            background: #2a2a2a;
+            border-left: 4px solid #ff0055;
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .price-details {
+            font-size: 13px;
+            color: #e0e0e0;
+            font-weight: bold;
+        }
+
+        .price-tag {
+            font-size: 15px;
+            color: #00ffd5;
+            font-weight: bold;
+            text-align: right;
+        }
+
         /* ---------------- Footer (Bottom) ---------------- */
         .footer {
             margin-top: 40px;
@@ -268,17 +343,17 @@
 </head>
 <body>
 
-    <!-- Countdown Screen (បង្ហាញពេលចូលមកដំបូង 3 នាទី) -->
+    <!-- Countdown Screen -->
     <div id="countdown-screen">
         <div class="countdown-card">
             <div class="countdown-title">LONGZz DIGITAL</div>
-            <div class="countdown-desc">សូមរង់ចាំបន្តិច Hệ thốngកំពុងរៀបចំ...</div>
+            <div class="countdown-desc">សូមរង់ចាំបន្តិច ប្រព័ន្ធកំពុងរៀបចំ...</div>
             <div class="countdown-timer" id="timer">03:00</div>
             <button class="skip-btn" onclick="startApp()">ចូលទៅកាន់ App ឥឡូវនេះ</button>
         </div>
     </div>
 
-    <!-- Main App Content (លាក់ទុកមុនពេលអស់ម៉ោង ឬចុចរំលង) -->
+    <!-- Main App Content -->
     <div id="main-app">
         <!-- Header Box with RGB Border -->
         <div class="rgb-border-box">
@@ -302,7 +377,7 @@
         <!-- 3D Menu Buttons with RGB Running Borders -->
         <div class="grid-menu">
             <div class="btn-wrapper">
-                <button class="menu-btn"><i class="fa-brands fa-tiktok"></i> LIKES KHMER</button>
+                <button class="menu-btn" onclick="openPricing()"><i class="fa-brands fa-tiktok"></i> LIKES KHMER</button>
             </div>
             <div class="btn-wrapper">
                 <button class="menu-btn"><i class="fa-brands fa-tiktok"></i> VIEWS KHMER</button>
@@ -321,9 +396,41 @@
         </div>
     </div>
 
-    <!-- JavaScript សម្រាប់រាប់ថយក្រោយ 3 នាទី (180 វិនាទី) -->
+    <!-- Pricing Modal Popup for LIKES KHMER -->
+    <div id="pricing-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>តារាងតម្លៃ LIKES KHMER</h3>
+                <button class="close-btn" onclick="closePricing()">&times;</button>
+            </div>
+            <div class="price-list">
+                <div class="price-item">
+                    <div class="price-details">❤️ 500 - 1k Like + 👀 1.2k - 2.5k View</div>
+                    <div class="price-tag">$1.20</div>
+                </div>
+                <div class="price-item">
+                    <div class="price-details">❤️ 1K - 2K Like + 👀 2.5k - 4.5k View</div>
+                    <div class="price-tag">$2.20</div>
+                </div>
+                <div class="price-item">
+                    <div class="price-details">❤️ 2.5k - 5k Like + 👀 7k - 12k View</div>
+                    <div class="price-tag">$3.30</div>
+                </div>
+                <div class="price-item">
+                    <div class="price-details">❤️ 5k - 7k Like + 👀 12k - 18k View</div>
+                    <div class="price-tag">$4.60</div>
+                </div>
+                <div class="price-item">
+                    <div class="price-details">❤️ 5k - 10k Like + 👀 15k - 20k View</div>
+                    <div class="price-tag">$11.10</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
     <script>
-        let timeLeft = 180; // 3 នាទី = 180 វិនាទី
+        let timeLeft = 180; 
         const timerElement = document.getElementById("timer");
         const countdownScreen = document.getElementById("countdown-screen");
         const mainApp = document.getElementById("main-app");
@@ -337,7 +444,6 @@
             let minutes = Math.floor(timeLeft / 60);
             let seconds = timeLeft % 60;
 
-            // រៀបចំទម្រង់បង្ហាញ 00:00
             minutes = minutes < 10 ? "0" + minutes : minutes;
             seconds = seconds < 10 ? "0" + seconds : seconds;
 
@@ -349,6 +455,15 @@
             }
             timeLeft--;
         }, 1000);
+
+        // Functions to open and close pricing modal
+        function openPricing() {
+            document.getElementById("pricing-modal").style.display = "flex";
+        }
+
+        function closePricing() {
+            document.getElementById("pricing-modal").style.display = "none";
+        }
     </script>
 
 </body>
