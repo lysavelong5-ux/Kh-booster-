@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LONGZz DIGITAL - TikTok Boost</title>
-    <!-- Font Awesome សម្រាប់ Logo TikTok និង Icon ផ្សេងៗ -->
+    <!-- Font Awesome និង Google Fonts សម្រាប់អក្សរស្អាត -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&family=Khmer+OS+Battambang:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #1a1a1a;
@@ -16,20 +17,23 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
         }
 
-        /* ---------------- Header RGB Border ---------------- */
+        /* ---------------- Header Rotating RGB Border ---------------- */
         .rgb-border-box {
             position: relative;
             width: 100%;
             max-width: 420px;
             border-radius: 35px;
             padding: 3px;
+            overflow: hidden;
+            margin-bottom: 25px;
             background: linear-gradient(0deg, #ff0055, #00ffff, #ffcc00, #ff0055);
             background-size: 400%;
             animation: rgbGlow 6s linear infinite;
-            margin-bottom: 25px;
-            box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
+            box-shadow: 0 0 20px rgba(255, 0, 85, 0.5);
         }
 
         @keyframes rgbGlow {
@@ -45,6 +49,7 @@
             padding: 15px 20px;
             border-radius: 32px;
             width: 100%;
+            box-sizing: border-box;
         }
 
         .logo {
@@ -63,16 +68,18 @@
             overflow: hidden;
         }
 
+        /* ឈ្មោះ LONGZz DIGITAL ដាក់អក្សរធំ ស្អាត និងលេចធ្លោខ្លាំង */
         .brand-name {
-            font-weight: bold;
-            font-size: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 900;
+            font-size: 22px;
             display: flex;
             align-items: center;
             color: #ffffff;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
-        /* ប្ដូរ Blue Tick ឱ្យចេញជាសញ្ញាផ្ទៀងផ្ទាត់ពណ៌ខៀវពិតប្រាកដ */
         .verified-badge {
             color: #1d9bf0;
             margin-left: 6px;
@@ -90,6 +97,7 @@
             overflow: hidden;
             white-space: nowrap;
             width: 100%;
+            box-sizing: border-box;
         }
 
         .marquee-text {
@@ -124,9 +132,10 @@
             gap: 18px;
             width: 100%;
             max-width: 420px;
+            margin-bottom: auto;
         }
 
-        /* ---------------- 3D Buttons with Running RGB Border ---------------- */
+        /* ---------------- 3D Buttons with Rotating RGB Border ---------------- */
         .btn-wrapper {
             position: relative;
             border-radius: 20px;
@@ -163,6 +172,7 @@
             gap: 8px;
             width: 100%;
             cursor: pointer;
+            box-sizing: border-box;
         }
 
         .menu-btn i {
@@ -170,13 +180,15 @@
             color: #000000;
         }
 
-        /* ---------------- Footer ---------------- */
+        /* ---------------- Footer (Bottom) ---------------- */
         .footer {
-            margin-top: 45px;
+            margin-top: 40px;
+            margin-bottom: 20px;
             font-size: 13px;
             color: #888888;
             text-align: center;
             letter-spacing: 1px;
+            width: 100%;
         }
     </style>
 </head>
@@ -198,7 +210,7 @@
         </div>
     </div>
 
-    <!-- Service Section (ដក Pizza ចេញ ដាក់សញ្ញា 🛒) -->
+    <!-- Service Section -->
     <div class="section-title">🛒 សេវាកម្មប៊ូស Tik Tok ខ្មែរ<br>១.សូមជ្រើសរើសសេវាកម្ម</div>
 
     <!-- 3D Menu Buttons with RGB Running Borders -->
@@ -217,7 +229,7 @@
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer placed at the bottom -->
     <div class="footer">
         Official web LONGZz DIGITAL
     </div>
