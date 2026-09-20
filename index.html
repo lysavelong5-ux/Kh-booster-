@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LONGZz DIGITAL - TikTok Boost</title>
+    <!-- ដាក់ Font Awesome សម្រាប់ទាញយក Logo TikTok -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
-            background-color: #333333;
+            background-color: #222222;
             color: #ffffff;
             font-family: 'Khmer OS Battambang', sans-serif;
             margin: 0;
@@ -15,66 +17,98 @@
             flex-direction: column;
             align-items: center;
         }
+
+        /* បង្កើតស៊ុមភ្លើង RGB រត់ជុំវិញ */
+        .rgb-border-box {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 35px;
+            padding: 3px; /* កម្រាស់ស៊ុមភ្លើង */
+            background: linear-gradient(0deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            background-size: 400%;
+            animation: rgbGlow 20s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes rgbGlow {
+            0% { background-position: 0 0; }
+            50% { background-position: 400% 0; }
+            100% { background-position: 0 0; }
+        }
+
         .header {
             display: flex;
             align-items: center;
-            background-color: #444444;
-            padding: 10px 15px;
-            border-radius: 30px;
+            background-color: #333333;
+            padding: 12px 15px;
+            border-radius: 32px;
             width: 100%;
-            max-width: 400px;
-            margin-bottom: 20px;
         }
+
         .logo {
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             object-fit: cover;
             margin-right: 15px;
+            border: 2px solid #fff;
         }
+
         .title-container {
             display: flex;
             flex-direction: column;
             width: 100%;
+            overflow: hidden;
         }
+
         .brand-name {
             font-weight: bold;
             font-size: 18px;
             display: flex;
             align-items: center;
+            color: #ffffff;
         }
+
         .verified-badge {
             color: #1da1f2;
             margin-left: 5px;
             font-size: 14px;
         }
+
         .marquee-box {
-            background-color: #555555;
+            background-color: #444444;
             border-radius: 15px;
             padding: 5px 10px;
-            margin-top: 5px;
+            margin-top: 6px;
             overflow: hidden;
             white-space: nowrap;
             width: 100%;
         }
+
         .marquee-text {
             display: inline-block;
-            animation: marquee 10s linear infinite;
+            animation: marquee 12s linear infinite;
             font-size: 13px;
-            color: #dddddd;
+            color: #00ffd5;
+            font-weight: bold;
         }
+
         @keyframes marquee {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
         }
+
         .section-title {
             width: 100%;
             max-width: 400px;
             font-size: 15px;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #555;
-            padding-bottom: 5px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #444;
+            padding-bottom: 8px;
+            color: #ffcc00;
         }
+
         .grid-menu {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -82,40 +116,56 @@
             width: 100%;
             max-width: 400px;
         }
+
+        /* ឌីសាញប៊ូតុងប្រភេទ 3D */
         .menu-btn {
-            background-color: #e0e0e0;
-            color: #000000;
+            background: linear-gradient(145deg, #e6e6e6, #ffffff);
+            color: #111111;
             border: none;
-            padding: 12px;
-            border-radius: 25px;
+            padding: 15px 10px;
+            border-radius: 18px;
             font-weight: bold;
             font-size: 13px;
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 10px;
             cursor: pointer;
-            transition: 0.3s;
+            /* បែបផែន 3D Shadow */
+            box-shadow: 0 6px 0 #b0b0b0, 0 8px 10px rgba(0,0,0,0.3);
+            transition: all 0.1s ease;
         }
-        .menu-btn:hover {
-            background-color: #ffffff;
+
+        /* ពេលយក Mouse  တို့ ឬចុចលើប៊ូតុង 3D */
+        .menu-btn:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #b0b0b0, 0 4px 6px rgba(0,0,0,0.3);
         }
+
+        .menu-btn i {
+            font-size: 18px;
+            color: #000000;
+        }
+
         .footer {
             margin-top: 40px;
             font-size: 12px;
-            color: #aaaaaa;
+            color: #888888;
             text-align: center;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Section -->
-    <div class="header">
-        <img src="https://img.sanishtech.com/u/3a5550b463abd5ca244cabed3fda9cea.png" alt="Logo" class="logo">
-        <div class="title-container">
-            <div class="brand-name">LONGZz DIGITAL <span class="verified-badge">✔</span></div>
-            <div class="marquee-box">
-                <div class="marquee-text">សេវាកម្មប៊ូស Tik Tok ខ្មែរសុទ្ធល្បឿនលឿនត្រឹមតែ 24/h</div>
+    <!-- Header ជាមួយស៊ុមភ្លើង RGB រត់ជុំវិញ -->
+    <div class="rgb-border-box">
+        <div class="header">
+            <img src="https://img.sanishtech.com/u/3a5550b463abd5ca244cabed3fda9cea.png" alt="Logo" class="logo">
+            <div class="title-container">
+                <div class="brand-name">LONGZz DIGITAL <span class="verified-badge">✔</span></div>
+                <div class="marquee-box">
+                    <div class="marquee-text">សេវាកម្មប៊ូស Tik Tok ខ្មែរសុទ្ធល្បឿនលឿនត្រឹមតែ 24/h</div>
+                </div>
             </div>
         </div>
     </div>
@@ -123,12 +173,12 @@
     <!-- Service Section -->
     <div class="section-title">🍕 សេវាកម្មប៊ូស Tik Tok ខ្មែរ<br>១.សូមជ្រើសរើសសេវាកម្ម</div>
 
-    <!-- Menu Buttons -->
+    <!-- 3D Menu Buttons with TikTok Logo -->
     <div class="grid-menu">
-        <button class="menu-btn">🎵 LIKES KHMER</button>
-        <button class="menu-btn">🎵 VIEWS KHMER</button>
-        <button class="menu-btn">🎵 Likes Bot data</button>
-        <button class="menu-btn">🎵 Follow KH</button>
+        <button class="menu-btn"><i class="fa-brands fa-tiktok"></i> LIKES KHMER</button>
+        <button class="menu-btn"><i class="fa-brands fa-tiktok"></i> VIEWS KHMER</button>
+        <button class="menu-btn"><i class="fa-brands fa-tiktok"></i> Likes Bot data</button>
+        <button class="menu-btn"><i class="fa-brands fa-tiktok"></i> Follow KH</button>
     </div>
 
     <!-- Footer -->
