@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LONGZz DIGITAL - TikTok Boost</title>
-    <!-- ដាក់ Font Awesome សម្រាប់ទាញយក Logo TikTok -->
+    <!-- Font Awesome សម្រាប់ Logo TikTok និង Icon ផ្សេងៗ -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
-            background-color: #222222;
+            background-color: #1a1a1a;
             color: #ffffff;
             font-family: 'Khmer OS Battambang', sans-serif;
             margin: 0;
@@ -18,37 +18,38 @@
             align-items: center;
         }
 
-        /* បង្កើតស៊ុមភ្លើង RGB រត់ជុំវិញ */
+        /* ---------------- Header RGB Border ---------------- */
         .rgb-border-box {
             position: relative;
             width: 100%;
-            max-width: 400px;
+            max-width: 420px;
             border-radius: 35px;
-            padding: 3px; /* កម្រាស់ស៊ុមភ្លើង */
-            background: linear-gradient(0deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            padding: 3px;
+            background: linear-gradient(0deg, #ff0055, #00ffff, #ffcc00, #ff0055);
             background-size: 400%;
-            animation: rgbGlow 20s linear infinite;
-            margin-bottom: 20px;
+            animation: rgbGlow 6s linear infinite;
+            margin-bottom: 25px;
+            box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
         }
 
         @keyframes rgbGlow {
-            0% { background-position: 0 0; }
-            50% { background-position: 400% 0; }
-            100% { background-position: 0 0; }
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .header {
             display: flex;
             align-items: center;
-            background-color: #333333;
-            padding: 12px 15px;
+            background-color: #262626;
+            padding: 15px 20px;
             border-radius: 32px;
             width: 100%;
         }
 
         .logo {
-            width: 55px;
-            height: 55px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             object-fit: cover;
             margin-right: 15px;
@@ -64,23 +65,28 @@
 
         .brand-name {
             font-weight: bold;
-            font-size: 18px;
+            font-size: 20px;
             display: flex;
             align-items: center;
             color: #ffffff;
+            letter-spacing: 0.5px;
         }
 
+        /* ប្ដូរ Blue Tick ឱ្យចេញជាសញ្ញាផ្ទៀងផ្ទាត់ពណ៌ខៀវពិតប្រាកដ */
         .verified-badge {
-            color: #1da1f2;
-            margin-left: 5px;
-            font-size: 14px;
+            color: #1d9bf0;
+            margin-left: 6px;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .marquee-box {
-            background-color: #444444;
+            background-color: #333333;
             border-radius: 15px;
-            padding: 5px 10px;
-            margin-top: 6px;
+            padding: 6px 10px;
+            margin-top: 8px;
             overflow: hidden;
             white-space: nowrap;
             width: 100%;
@@ -88,8 +94,8 @@
 
         .marquee-text {
             display: inline-block;
-            animation: marquee 12s linear infinite;
-            font-size: 13px;
+            animation: marquee 10s linear infinite;
+            font-size: 15px;
             color: #00ffd5;
             font-weight: bold;
         }
@@ -99,70 +105,92 @@
             100% { transform: translateX(-100%); }
         }
 
+        /* ---------------- Section Title ---------------- */
         .section-title {
             width: 100%;
-            max-width: 400px;
-            font-size: 15px;
+            max-width: 420px;
+            font-size: 16px;
             margin-bottom: 20px;
             border-bottom: 2px solid #444;
             padding-bottom: 8px;
             color: #ffcc00;
+            font-weight: bold;
         }
 
+        /* ---------------- Grid Menu ---------------- */
         .grid-menu {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            gap: 18px;
             width: 100%;
-            max-width: 400px;
+            max-width: 420px;
         }
 
-        /* ឌីសាញប៊ូតុងប្រភេទ 3D */
+        /* ---------------- 3D Buttons with Running RGB Border ---------------- */
+        .btn-wrapper {
+            position: relative;
+            border-radius: 20px;
+            padding: 3px;
+            background: linear-gradient(90deg, #ff0055, #00ffcc, #ffff00, #ff0055);
+            background-size: 300%;
+            animation: buttonRgb 4s linear infinite;
+            box-shadow: 0 6px 0 #111, 0 8px 12px rgba(0,0,0,0.4);
+            transition: transform 0.1s ease;
+        }
+
+        @keyframes buttonRgb {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .btn-wrapper:active {
+            transform: translateY(3px);
+            box-shadow: 0 3px 0 #111, 0 4px 6px rgba(0,0,0,0.4);
+        }
+
         .menu-btn {
-            background: linear-gradient(145deg, #e6e6e6, #ffffff);
-            color: #111111;
+            background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
+            color: #000000;
             border: none;
-            padding: 15px 10px;
+            padding: 16px 10px;
             border-radius: 18px;
             font-weight: bold;
-            font-size: 13px;
+            font-size: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
+            width: 100%;
             cursor: pointer;
-            /* បែបផែន 3D Shadow */
-            box-shadow: 0 6px 0 #b0b0b0, 0 8px 10px rgba(0,0,0,0.3);
-            transition: all 0.1s ease;
-        }
-
-        /* ពេលយក Mouse  တို့ ឬចុចលើប៊ូតុង 3D */
-        .menu-btn:active {
-            transform: translateY(4px);
-            box-shadow: 0 2px 0 #b0b0b0, 0 4px 6px rgba(0,0,0,0.3);
         }
 
         .menu-btn i {
-            font-size: 18px;
+            font-size: 20px;
             color: #000000;
         }
 
+        /* ---------------- Footer ---------------- */
         .footer {
-            margin-top: 40px;
-            font-size: 12px;
+            margin-top: 45px;
+            font-size: 13px;
             color: #888888;
             text-align: center;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header ជាមួយស៊ុមភ្លើង RGB រត់ជុំវិញ -->
+    <!-- Header Box with RGB Border -->
     <div class="rgb-border-box">
         <div class="header">
             <img src="https://img.sanishtech.com/u/3a5550b463abd5ca244cabed3fda9cea.png" alt="Logo" class="logo">
             <div class="title-container">
-                <div class="brand-name">LONGZz DIGITAL <span class="verified-badge">✔</span></div>
+                <div class="brand-name">
+                    LONGZz DIGITAL 
+                    <span class="verified-badge" title="Verified"><i class="fa-solid fa-circle-check"></i></span>
+                </div>
                 <div class="marquee-box">
                     <div class="marquee-text">សេវាកម្មប៊ូស Tik Tok ខ្មែរសុទ្ធល្បឿនលឿនត្រឹមតែ 24/h</div>
                 </div>
@@ -170,15 +198,23 @@
         </div>
     </div>
 
-    <!-- Service Section -->
-    <div class="section-title">🍕 សេវាកម្មប៊ូស Tik Tok ខ្មែរ<br>១.សូមជ្រើសរើសសេវាកម្ម</div>
+    <!-- Service Section (ដក Pizza ចេញ ដាក់សញ្ញា 🛒) -->
+    <div class="section-title">🛒 សេវាកម្មប៊ូស Tik Tok ខ្មែរ<br>១.សូមជ្រើសរើសសេវាកម្ម</div>
 
-    <!-- 3D Menu Buttons with TikTok Logo -->
+    <!-- 3D Menu Buttons with RGB Running Borders -->
     <div class="grid-menu">
-        <button class="menu-btn"><i class="fa-brands fa-tiktok"></i> LIKES KHMER</button>
-        <button class="menu-btn"><i class="fa-brands fa-tiktok"></i> VIEWS KHMER</button>
-        <button class="menu-btn"><i class="fa-brands fa-tiktok"></i> Likes Bot data</button>
-        <button class="menu-btn"><i class="fa-brands fa-tiktok"></i> Follow KH</button>
+        <div class="btn-wrapper">
+            <button class="menu-btn"><i class="fa-brands fa-tiktok"></i> LIKES KHMER</button>
+        </div>
+        <div class="btn-wrapper">
+            <button class="menu-btn"><i class="fa-brands fa-tiktok"></i> VIEWS KHMER</button>
+        </div>
+        <div class="btn-wrapper">
+            <button class="menu-btn"><i class="fa-brands fa-tiktok"></i> Likes Bot data</button>
+        </div>
+        <div class="btn-wrapper">
+            <button class="menu-btn"><i class="fa-brands fa-tiktok"></i> Follow KH</button>
+        </div>
     </div>
 
     <!-- Footer -->
