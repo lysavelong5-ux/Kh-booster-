@@ -253,7 +253,7 @@
             color: #000000;
         }
 
-        /* ---------------- Pricing Modal (Popup តូចល្មម មានភ្លើង RGB ជុំវិញ) ---------------- */
+        /* ---------------- Pricing Modal (Popup តូចល្មម បង្ហាញជា ២ជួរស្មើគ្នា) ---------------- */
         #pricing-modal {
             display: none;
             position: fixed;
@@ -269,11 +269,10 @@
             box-sizing: border-box;
         }
 
-        /* ប្រអប់ RGB សម្រាប់រុំព័ទ្ធ Modal ឱ្យមានភ្លើងរត់វិល */
         .modal-rgb-wrapper {
             position: relative;
             width: 100%;
-            max-width: 360px; /* ទំហំតូចល្មមស្អាត */
+            max-width: 480px; /* ពង្រីកទទឹងបន្តិចដើម្បីដាក់បាន ២ ຖັນស្មើគ្នា */
             border-radius: 28px;
             padding: 3px;
             background: linear-gradient(0deg, #ff0055, #00ffff, #ffcc00, #ff0055);
@@ -318,28 +317,60 @@
             cursor: pointer;
         }
 
-        .price-item {
-            background: #2a2a2a;
-            border-left: 4px solid #ff0055;
-            padding: 10px;
-            border-radius: 8px;
-            margin-bottom: 8px;
+        /* រៀបចំបញ្ជីតម្លៃឱ្យទៅជា ២ ຖັນស្មើគ្នា (Grid 2 columns) */
+        .price-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .price-card-wrapper {
+            position: relative;
+            border-radius: 16px;
+            padding: 2px;
+            background: linear-gradient(90deg, #ff0055, #00ffcc, #ffff00, #ff0055);
+            background-size: 300%;
+            animation: buttonRgb 4s linear infinite;
+            box-shadow: 0 4px 0 #111, 0 6px 8px rgba(0,0,0,0.3);
+            transition: transform 0.1s ease;
+        }
+
+        .price-card-wrapper:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #111, 0 3px 4px rgba(0,0,0,0.3);
+        }
+
+        .price-card {
+            background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
+            color: #000000;
+            border-radius: 14px;
+            padding: 12px 10px;
             display: flex;
             flex-direction: column;
-            gap: 3px;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+            box-sizing: border-box;
+            cursor: pointer;
         }
 
         .price-details {
-            font-size: 12px;
-            color: #e0e0e0;
+            font-size: 11px;
+            color: #222;
             font-weight: bold;
+            margin-bottom: 6px;
+            line-height: 1.3;
         }
 
         .price-tag {
             font-size: 14px;
-            color: #00ffd5;
-            font-weight: bold;
-            text-align: right;
+            color: #ff0055;
+            font-weight: 900;
+            background: #ffffff;
+            padding: 3px 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         /* ---------------- Footer (Bottom) ---------------- */
@@ -409,7 +440,7 @@
         </div>
     </div>
 
-    <!-- Pricing Modal Popup (តូចល្មម ផុសឡើងមក មានភ្លើង RGB) -->
+    <!-- Pricing Modal Popup (ប៊ូតុងតូចៗ ២ជួរស្មើគ្នា មានភ្លើង RGB) -->
     <div id="pricing-modal">
         <div class="modal-rgb-wrapper" id="modalWrapper">
             <div class="modal-content">
@@ -417,26 +448,36 @@
                     <h3>តារាងតម្លៃ LIKES KHMER</h3>
                     <button class="close-btn" onclick="closePricing()">&times;</button>
                 </div>
-                <div class="price-list">
-                    <div class="price-item">
-                        <div class="price-details">❤️ 500-1k Like + 👀 1.2k-2.5k View</div>
-                        <div class="price-tag">$1.20</div>
+                <div class="price-grid">
+                    <div class="price-card-wrapper">
+                        <div class="price-card">
+                            <div class="price-details">❤️ 500-1k Like<br>+ 👀 1.2k-2.5k View</div>
+                            <div class="price-tag">$1.20</div>
+                        </div>
                     </div>
-                    <div class="price-item">
-                        <div class="price-details">❤️ 1K-2K Like + 👀 2.5k-4.5k View</div>
-                        <div class="price-tag">$2.20</div>
+                    <div class="price-card-wrapper">
+                        <div class="price-card">
+                            <div class="price-details">❤️ 1K-2K Like<br>+ 👀 2.5k-4.5k View</div>
+                            <div class="price-tag">$2.20</div>
+                        </div>
                     </div>
-                    <div class="price-item">
-                        <div class="price-details">❤️ 2.5k-5k Like + 👀 7k-12k View</div>
-                        <div class="price-tag">$3.30</div>
+                    <div class="price-card-wrapper">
+                        <div class="price-card">
+                            <div class="price-details">❤️ 2.5k-5k Like<br>+ 👀 7k-12k View</div>
+                            <div class="price-tag">$3.30</div>
+                        </div>
                     </div>
-                    <div class="price-item">
-                        <div class="price-details">❤️ 5k-7k Like + 👀 12k-18k View</div>
-                        <div class="price-tag">$4.60</div>
+                    <div class="price-card-wrapper">
+                        <div class="price-card">
+                            <div class="price-details">❤️ 5k-7k Like<br>+ 👀 12k-18k View</div>
+                            <div class="price-tag">$4.60</div>
+                        </div>
                     </div>
-                    <div class="price-item">
-                        <div class="price-details">❤️ 5-10k Like + 👀 15k-20k View</div>
-                        <div class="price-tag">$11.10</div>
+                    <div class="price-card-wrapper" style="grid-column: span 2;">
+                        <div class="price-card">
+                            <div class="price-details">❤️ 5k-10k Like + 👀 15k-20k View</div>
+                            <div class="price-tag">$11.10</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -471,7 +512,6 @@
             timeLeft--;
         }, 1000);
 
-        // Functions to open and close pricing modal with popup animation
         function openPricing() {
             const modal = document.getElementById("pricing-modal");
             const wrapper = document.getElementById("modalWrapper");
