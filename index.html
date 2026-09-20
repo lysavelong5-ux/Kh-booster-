@@ -253,7 +253,7 @@
             color: #000000;
         }
 
-        /* ---------------- Pricing Modal (Popup តូចល្មម ២ជួរស្មើគ្នា ភ្លើង RGB) ---------------- */
+        /* ---------------- Pricing Modal (Popup តូចល្មម មានប្រអប់បញ្ចូលលីង) ---------------- */
         #pricing-modal {
             display: none;
             position: fixed;
@@ -278,7 +278,7 @@
             background: linear-gradient(0deg, #ff0055, #00ffff, #ffcc00, #ff0055);
             background-size: 400%;
             animation: rgbGlow 6s linear infinite;
-            box-shadow: 0 0 25px rgba(255, 0, 85, 0.4);
+            box-shadow: 0 0 25px rgba(255, 0, 213, 0.4);
             transform: scale(0.8);
             opacity: 0;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -290,7 +290,7 @@
             padding: 18px;
             width: 100%;
             box-sizing: border-box;
-            max-height: 80vh;
+            max-height: 85vh;
             overflow-y: auto;
         }
 
@@ -317,6 +317,30 @@
             cursor: pointer;
         }
 
+        /* ប្រអប់សម្រាប់ដាក់លីង TikTok ខាងលើកញ្ចប់តម្លៃ */
+        .link-input-box {
+            margin-bottom: 12px;
+            width: 100%;
+        }
+
+        .link-input {
+            width: 100%;
+            background: #1a1a1a;
+            border: 2px solid #555;
+            border-radius: 12px;
+            padding: 10px 12px;
+            color: #fff;
+            font-family: 'Khmer OS Battambang', sans-serif;
+            font-size: 12px;
+            box-sizing: border-box;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        .link-input:focus {
+            border-color: #00ffd5;
+        }
+
         .price-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -339,6 +363,7 @@
             box-shadow: 0 1px 0 #111, 0 2px 3px rgba(0,0,0,0.3);
         }
 
+        /* ប៊ូតុងកញ្ចប់តម្លៃដែលត្រូវរើស */
         .price-card {
             background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
             color: #000000;
@@ -352,9 +377,17 @@
             height: 100%;
             box-sizing: border-box;
             cursor: pointer;
+            border: 2px solid transparent;
+            transition: 0.2s;
         }
 
-        /* ធ្វើឱ្យអក្សរក្នុងប៊ូតុងតម្លៃ តូចល្មម ក្រាស់ដិត និងមើលច្បាស់ល្អ */
+        /* ពេលជ្រើសរើសកញ្ចប់ណាមួយ */
+        .price-card.selected {
+            background: linear-gradient(145deg, #d4fc79, #96e6a1);
+            border-color: #ff0055;
+            box-shadow: 0 0 10px rgba(255, 0, 85, 0.6);
+        }
+
         .price-details {
             font-size: 11px;
             color: #000000;
@@ -371,6 +404,31 @@
             padding: 2px 8px;
             border-radius: 8px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+        }
+
+        /* ប៊ូតុង "ទិញឥឡូវនេះ" លាក់ទុកមុនពេលរើសកញ្ចប់ */
+        .buy-action-container {
+            margin-top: 15px;
+            text-align: center;
+            display: none;
+        }
+
+        .buy-btn {
+            background: linear-gradient(145deg, #00ffd5, #0077ff);
+            color: #000;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 16px;
+            font-size: 15px;
+            font-weight: 900;
+            cursor: pointer;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0,255,213,0.4);
+            transition: 0.2s;
+        }
+
+        .buy-btn:active {
+            transform: scale(0.97);
         }
 
         /* ---------------- Footer (Bottom) ---------------- */
@@ -440,7 +498,7 @@
         </div>
     </div>
 
-    <!-- Pricing Modal Popup (ប៊ូតុងតម្លៃតូចល្មម អក្សរដិតធំច្បាស់ ២ជួរស្មើគ្នា) -->
+    <!-- Pricing Modal Popup -->
     <div id="pricing-modal">
         <div class="modal-rgb-wrapper" id="modalWrapper">
             <div class="modal-content">
@@ -448,37 +506,48 @@
                     <h3>តារាងតម្លៃ LIKES KHMER</h3>
                     <button class="close-btn" onclick="closePricing()">&times;</button>
                 </div>
+                
+                <!-- ប្រអប់សម្រាប់ដាក់លីង TikTok -->
+                <div class="link-input-box">
+                    <input type="text" id="tiktokLink" class="link-input" placeholder="🔗 បញ្ចូលលីងវីដេអូ TikTok របស់អ្នកទីនេះ...">
+                </div>
+
                 <div class="price-grid">
-                    <div class="price-card-wrapper">
+                    <div class="price-card-wrapper" onclick="selectPackage(this, '500-1K Like + 1.2k-2.5k Views ($1.20)')">
                         <div class="price-card">
                             <div class="price-details">❤️ 500-1K<br>+ 1.2k-2.5k Views</div>
                             <div class="price-tag">$1.20</div>
                         </div>
                     </div>
-                    <div class="price-card-wrapper">
+                    <div class="price-card-wrapper" onclick="selectPackage(this, '1K-2K Like + 2.5k-4.5k Views ($2.20)')">
                         <div class="price-card">
                             <div class="price-details">❤️ 1K-2K<br>+ 2.5k-4.5k Views</div>
                             <div class="price-tag">$2.20</div>
                         </div>
                     </div>
-                    <div class="price-card-wrapper">
+                    <div class="price-card-wrapper" onclick="selectPackage(this, '2.5k-5k Like + 7k-12k Views ($3.30)')">
                         <div class="price-card">
                             <div class="price-details">❤️ 2.5k-5k<br>+ 7k-12k Views</div>
                             <div class="price-tag">$3.30</div>
                         </div>
                     </div>
-                    <div class="price-card-wrapper">
+                    <div class="price-card-wrapper" onclick="selectPackage(this, '5k-7k Like + 12k-18k Views ($4.60)')">
                         <div class="price-card">
                             <div class="price-details">❤️ 5k-7k<br>+ 12k-18k Views</div>
                             <div class="price-tag">$4.60</div>
                         </div>
                     </div>
-                    <div class="price-card-wrapper" style="grid-column: span 2;">
+                    <div class="price-card-wrapper" style="grid-column: span 2;" onclick="selectPackage(this, '5-10k Like + 15k-20k Views ($11.10)')">
                         <div class="price-card">
                             <div class="price-details">❤️ 5-10k Like + 15k-20k Views</div>
                             <div class="price-tag">$11.10</div>
                         </div>
                     </div>
+                </div>
+
+                <!-- ប៊ូតុងទិញឥឡូវនេះ (បង្ហាញពេលរើសកញ្ចប់រួច) -->
+                <div class="buy-action-container" id="buyActionContainer">
+                    <button class="buy-btn" onclick="checkout()">🛒 ទិញឥឡូវនេះ</button>
                 </div>
             </div>
         </div>
@@ -487,6 +556,7 @@
     <!-- JavaScript -->
     <script>
         let timeLeft = 180; 
+        let selectedPkg = "";
         const timerElement = document.getElementById("timer");
         const countdownScreen = document.getElementById("countdown-screen");
         const mainApp = document.getElementById("main-app");
@@ -530,6 +600,34 @@
             setTimeout(() => {
                 modal.style.display = "none";
             }, 200);
+        }
+
+        function selectPackage(element, pkgName) {
+            // ដកសញ្ញា selected ចេញពីកាតផ្សេងៗ
+            document.querySelectorAll('.price-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            // ដាក់សញ្ញា selected លើកាតដែលបានចុច
+            element.querySelector('.price-card').classList.add('selected');
+            selectedPkg = pkgName;
+
+            // បង្ហាញប៊ូតុង ទិញឥឡូវនេះ
+            document.getElementById("buyActionContainer").style.display = "block";
+        }
+
+        function checkout() {
+            const link = document.getElementById("tiktokLink").value.trim();
+            if (!link) {
+                alert("សូមដាក់លីងវីដេអូ TikTok របស់អ្នកជាមុនសិន!");
+                document.getElementById("tiktokLink").focus();
+                return;
+            }
+            if (!selectedPkg) {
+                alert("សូមជ្រើសរើសកញ្ចប់សេវាកម្មជាមុនសិន!");
+                return;
+            }
+            alert("បញ្ជាទិញជោគជ័យ!\n\nលីង: " + link + "\nកញ្ចប់: " + selectedPkg);
+            closePricing();
         }
     </script>
 
