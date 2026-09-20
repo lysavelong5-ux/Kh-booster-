@@ -253,7 +253,7 @@
             color: #000000;
         }
 
-        /* ---------------- Pricing Modal (Popup តូចល្មម បង្ហាញជា ២ជួរស្មើគ្នា) ---------------- */
+        /* ---------------- Pricing Modal (Popup តូចល្មម ២ជួរស្មើគ្នា ភ្លើង RGB) ---------------- */
         #pricing-modal {
             display: none;
             position: fixed;
@@ -272,7 +272,7 @@
         .modal-rgb-wrapper {
             position: relative;
             width: 100%;
-            max-width: 480px; /* ពង្រីកទទឹងបន្តិចដើម្បីដាក់បាន ២ ຖັນស្មើគ្នា */
+            max-width: 480px;
             border-radius: 28px;
             padding: 3px;
             background: linear-gradient(0deg, #ff0055, #00ffff, #ffcc00, #ff0055);
@@ -317,34 +317,33 @@
             cursor: pointer;
         }
 
-        /* រៀបចំបញ្ជីតម្លៃឱ្យទៅជា ២ ຖັນស្មើគ្នា (Grid 2 columns) */
         .price-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
+            gap: 10px;
         }
 
         .price-card-wrapper {
             position: relative;
-            border-radius: 16px;
+            border-radius: 14px;
             padding: 2px;
             background: linear-gradient(90deg, #ff0055, #00ffcc, #ffff00, #ff0055);
             background-size: 300%;
             animation: buttonRgb 4s linear infinite;
-            box-shadow: 0 4px 0 #111, 0 6px 8px rgba(0,0,0,0.3);
+            box-shadow: 0 3px 0 #111, 0 4px 6px rgba(0,0,0,0.3);
             transition: transform 0.1s ease;
         }
 
         .price-card-wrapper:active {
             transform: translateY(2px);
-            box-shadow: 0 2px 0 #111, 0 3px 4px rgba(0,0,0,0.3);
+            box-shadow: 0 1px 0 #111, 0 2px 3px rgba(0,0,0,0.3);
         }
 
         .price-card {
             background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
             color: #000000;
-            border-radius: 14px;
-            padding: 12px 10px;
+            border-radius: 12px;
+            padding: 8px 6px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -356,21 +355,21 @@
         }
 
         .price-details {
-            font-size: 11px;
-            color: #222;
+            font-size: 10px;
+            color: #111;
             font-weight: bold;
-            margin-bottom: 6px;
-            line-height: 1.3;
+            margin-bottom: 5px;
+            line-height: 1.2;
         }
 
         .price-tag {
-            font-size: 14px;
+            font-size: 13px;
             color: #ff0055;
             font-weight: 900;
             background: #ffffff;
-            padding: 3px 10px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 2px 8px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.15);
         }
 
         /* ---------------- Footer (Bottom) ---------------- */
@@ -440,7 +439,7 @@
         </div>
     </div>
 
-    <!-- Pricing Modal Popup (ប៊ូតុងតូចៗ ២ជួរស្មើគ្នា មានភ្លើង RGB) -->
+    <!-- Pricing Modal Popup (ប៊ូតុងតូចខ្លី ស្អាត ២ជួរស្មើគ្នា) -->
     <div id="pricing-modal">
         <div class="modal-rgb-wrapper" id="modalWrapper">
             <div class="modal-content">
@@ -451,31 +450,31 @@
                 <div class="price-grid">
                     <div class="price-card-wrapper">
                         <div class="price-card">
-                            <div class="price-details">❤️ 500-1k Like<br>+ 👀 1.2k-2.5k View</div>
+                            <div class="price-details">❤️ 500-1K<br>+ 1.2k-2.5k Views</div>
                             <div class="price-tag">$1.20</div>
                         </div>
                     </div>
                     <div class="price-card-wrapper">
                         <div class="price-card">
-                            <div class="price-details">❤️ 1K-2K Like<br>+ 👀 2.5k-4.5k View</div>
+                            <div class="price-details">❤️ 1K-2K<br>+ 2.5k-4.5k Views</div>
                             <div class="price-tag">$2.20</div>
                         </div>
                     </div>
                     <div class="price-card-wrapper">
                         <div class="price-card">
-                            <div class="price-details">❤️ 2.5k-5k Like<br>+ 👀 7k-12k View</div>
+                            <div class="price-details">❤️ 2.5k-5k<br>+ 7k-12k Views</div>
                             <div class="price-tag">$3.30</div>
                         </div>
                     </div>
                     <div class="price-card-wrapper">
                         <div class="price-card">
-                            <div class="price-details">❤️ 5k-7k Like<br>+ 👀 12k-18k View</div>
+                            <div class="price-details">❤️ 5k-7k<br>+ 12k-18k Views</div>
                             <div class="price-tag">$4.60</div>
                         </div>
                     </div>
                     <div class="price-card-wrapper" style="grid-column: span 2;">
                         <div class="price-card">
-                            <div class="price-details">❤️ 5k-10k Like + 👀 15k-20k View</div>
+                            <div class="price-details">❤️ 5-10k Like + 15k-20k Views</div>
                             <div class="price-tag">$11.10</div>
                         </div>
                     </div>
